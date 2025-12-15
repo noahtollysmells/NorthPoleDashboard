@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>North Pole Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;800&family=Merriweather:wght@300;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="background">
+        <div class="lights">
+            <span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <div id="snow-container"></div>
+    </div>
+
+    <header class="top">
+        <div class="container">
+            <div class="brand">
+                <svg class="logo" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+                    <circle cx="32" cy="32" r="30" fill="#e11d48" />
+                    <path d="M20 38c6 6 18 6 24 0" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+                    <circle cx="26" cy="26" r="3" fill="#fff" />
+                    <circle cx="38" cy="26" r="3" fill="#fff" />
+                </svg>
+                <div>
+                    <h1>North Pole Dashboard</h1>
+                    <p class="subtitle">Workshop status, sleigh tracker and festive metrics</p>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="clock" id="miniClock" aria-live="polite">--:--:--</div>
+                <button id="themeToggle" aria-pressed="false" class="icon-btn" title="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="grid">
+        <div class="container">
+            <section class="hero card">
+                <div class="hero-left">
+                    <h2 id="countdown">Loading countdown…</h2>
+                    <p class="hero-meta">Days until Christmas</p>
+                </div>
+                <div class="hero-right">
+                    <div class="sleigh-wrap" aria-hidden="true">
+                        <img id="sleighImg" src="assets/sleigh.png" alt="Sleigh" />
+                    </div>
+                </div>
+            </section>
+
+            <section class="card metrics-row">
+                <div class="metrics">
+                    <div class="metric">
+                        <div class="label">Gift Queue</div>
+                        <div class="value"><span class="value-num" id="giftQueue">--</span></div>
+                        <div class="bar"><div id="giftBar" class="fill"></div></div>
+                    </div>
+                    <div class="metric">
+                        <div class="label">Reindeer Readiness</div>
+                        <div class="value"><span class="value-num" id="reindeer">--</span><span class="unit">%</span></div>
+                        <div class="bar"><div id="reindeerBar" class="fill"></div></div>
+                    </div>
+                    <div class="metric">
+                        <div class="label">Workshop Temp</div>
+                        <div class="value"><span class="value-num" id="workshopTemp">--</span><span class="unit">°C</span></div>
+                        <div class="thermo"><div id="thermoFill" class="thermo-fill"></div></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card">
+                <h3>North Pole Weather</h3>
+                <div id="weather" class="large">Fetching weather…</div>
+            </section>
+
+            <section class="card">
+                <h3>Naughty or Nice</h3>
+                <div class="nn">
+                    <div class="nn-row">
+                        <input id="nameInput" type="text" placeholder="Enter a name" aria-label="Name" />
+                        <button id="checkBtn">Check</button>
+                    </div>
+                    <div id="nnResult" class="result" aria-live="polite">—</div>
+                    <div class="history">
+                        <h4>Recent checks</h4>
+                        <ul id="nnHistory" class="history-list" aria-live="polite"></ul>
+                        <div class="history-actions">
+                            <button id="clearHistory">Clear</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="foot">Made for the school coding competition • Merry Christmas</footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
